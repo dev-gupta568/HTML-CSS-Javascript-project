@@ -1,0 +1,310 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+            position: relative;
+            transition: background 0.5s ease;
+        }
+
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(255, 182, 193, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 105, 180, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 192, 203, 0.2) 0%, transparent 50%);
+            animation: float 6s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+            max-width: 400px;
+            animation: pulse 2s ease-in-out infinite;
+            transition: all 0.5s ease;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3em;
+            color: #ff69b4;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .question {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5em;
+            color: #e91e63;
+            margin: 20px 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+        }
+
+        .yes-btn {
+            background: linear-gradient(135deg, #ff69b4, #ff1493);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+        }
+
+        .yes-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.6);
+        }
+
+        .no-btn {
+            background: linear-gradient(135deg, #bdc3c7, #95a5a6);
+            color: white;
+            box-shadow: 0 4px 15px rgba(189, 195, 199, 0.4);
+        }
+
+        .no-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(189, 195, 199, 0.6);
+        }
+
+       
+        .heart {
+            font-size: 2em;
+            color: #ff69b4;
+            animation: heartbeat 1.5s ease-in-out infinite;
+            margin-bottom: 10px;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        
+        .yes-response {
+            display: none;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .thank-you {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3em;
+            color: #ff1493;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .love-message {
+            font-size: 1.3em;
+            color: #e91e63;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+       
+        .floating-hearts {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .floating-heart {
+            position: absolute;
+            font-size: 1.5em;
+            color: #ff69b4;
+            animation: floatUp 3s ease-out infinite;
+            opacity: 0;
+        }
+
+        /* @keyframes floatUp {
+            0% { */
+
+        
+        .no-response {
+            display: none;
+            animation: fadeInSad 1s ease-in;
+        }
+
+        @keyframes fadeInSad {
+            from { opacity: 0; transform: scale(0.9) translateY(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .sad-message {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8em;
+            color: #ff69b4;
+            margin: 20px 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .heartbroken {
+            font-size: 3em;
+            color: #e91e63;
+            animation: slowBreak 2s ease-in-out infinite;
+            margin: 10px 0;
+        }
+
+        @keyframes slowBreak {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+            50% { transform: scale(0.8) rotate(10deg); opacity: 0.7; }
+        }
+
+        .emotional-message {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+       
+        .falling-petals {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .falling-petal {
+            position: absolute;
+            font-size: 1.2em;
+            color: rgba(255, 105, 180, 0.6);
+            animation: fallDown 4s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes fallDown {
+            0% {
+                transform: translateY(-50px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(250px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+       
+        .falling-petal:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .falling-petal:nth-child(2) { left: 20%; animation-delay: 0.8s; }
+        .falling-petal:nth-child(3) { left: 30%; animation-delay: 1.6s; }
+        .falling-petal:nth-child(4) { left: 50%; animation-delay: 2.4s; }
+        .falling-petal:nth-child(5) { left: 70%; animation-delay: 3.2s; }
+        .falling-petal:nth-child(6) { left: 80%; animation-delay: 0.4s; }
+        .falling-petal:nth-child(7) { left: 40%; animation-delay: 1.2s; }
+        .falling-petal:nth-child(8) { left: 60%; animation-delay: 2s; }
+
+        .try-again-btn {
+            background: linear-gradient(135deg, #ff69b4, #ff1493);
+            color: white;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .try-again-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+        }
+
+        
+        .hidden {
+            display: none !important;
+        }
+
+       
+        .sad-mode {
+            background: linear-gradient(135deg, #ff9a9e 0%, #f8bbd9 50%, #e1bee7 100%);
+        }
+
+        .sad-container {
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 30px rgba(233, 30, 99, 0.2);
+            animation: slowPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes slowPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(0.98); }
+        }
+
+       
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+                margin: 20px;
+            }
+            h1 {
+                font-size: 2.5em;
+            }
+            .question {
+                font-size: 2em;
+            }
+            .thank-you, .sad-message {
+                font-size: 2.5em;
+            }
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .floating-hearts, .falling-petals {
+                height: 150px;
+            }
+        }

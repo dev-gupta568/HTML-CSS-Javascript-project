@@ -1,0 +1,185 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #b784b7;
+}
+
+.envelope{
+    position: relative;
+    cursor: pointer;
+}
+
+.back{
+    position: relative;
+    width: 300px;
+    height: 240px;
+    background: #6247aa;
+}
+
+.front{
+    position: absolute;
+    border-right: 156px solid #815ac0;
+    border-top: 120px solid transparent;
+    border-bottom: 120px solid transparent;
+    height: 0;
+    width: 0;
+    top: 0;
+    left: 144px;
+    z-index: 3;
+}
+
+.front:before{
+    content: "";
+    position: absolute;
+    border-left: 156px solid #815ac0;
+    border-top: 120px solid transparent;
+    border-bottom: 120px solid transparent;
+    height: 0;
+    width: 0;
+    top: -120px;
+    left: -144px;
+}
+
+.front:after{
+    content: "";
+    position: absolute;
+    border-bottom: 126px solid #7251b5;
+    border-left: 156px solid transparent;
+    border-right: 150px solid transparent;
+    height: 0;
+    width: 0;
+    top: -6px;
+    left: -144px;
+}
+
+.top{
+    position: absolute;
+    border-top: 126px solid #9163cb;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    height: 0;
+    width: 0;
+    top: 0;
+    transform-origin: top;
+    transition: 0.4s;
+}
+
+.envelope.open .top{
+    transform: rotateX(180deg);
+}
+
+
+
+.letter{
+    position: absolute;
+    background: white;
+    width: 276px;
+    height: 228px;
+    top: 12px;
+    left: 12px;
+    transition: 0.2s;
+}
+
+.envelope.open .letter{
+    transform: translateY(-120px);
+    z-index: 4;
+}
+
+.text1{
+    position: absolute;
+    color: lightpink;
+    font-family: sans-serif;
+    top: -80%;
+}
+
+.text{
+    text-align: center;
+    font-size: 18px;
+    font-family: cursive;
+    font-weight: lighter;
+    color: palevioletred;
+    position: relative;
+}
+
+
+.heart{
+    background-color: red;
+    height: 84px;
+    width: 84px;
+    position: relative;
+    top: 24px;
+    left: 24px;
+    transform: rotate(-45deg);
+    box-shadow: -5px 10px 90px red;
+    animation: untoldcoding 0.8s linear infinite;
+}
+
+
+
+
+
+.heart:before{
+    content: '';
+    position: absolute;
+    height: 84px;
+    width: 84px;
+    background-color:red;
+    top: -48px;
+    border-radius: 50px;
+}
+
+.heart:after{
+    content: '';
+    position: absolute;
+    height: 84px;
+    width: 84px;
+    background-color: red;
+    right: -48px;
+    border-radius: 50px;
+}
+
+
+@keyframes untoldcoding {
+    0%{
+        transform: rotate(-45deg) scale(1.07);
+        filter: hue-rotate(0deg);
+    }
+    50%{
+        transform: rotate(-45deg) scale(1.2);
+        filter: hue-rotate(180deg);
+    }
+    100%{
+        transform: rotate(-45deg) scale(0.07);
+        filter: hue-rotate(360deg);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
